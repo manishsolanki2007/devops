@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  connection: local
+  
+  vars:
+    fnames:
+      - Manish
+      - Sagar
+      - Ravi
+      - Nilesh
+    
+  tasks:
+    - name: using echo
+      command: echo "{{ item }}"
+      with_items: '{{ fnames }}'
+     
+    - name: using debug
+      debug: msg="{{ item }}"
+      with_items: '{{ fnames }}'

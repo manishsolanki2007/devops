@@ -1,0 +1,9 @@
+---
+
+- name: Execute a script on call webserver nodes
+  hosts: web_servers
+  tasks:
+    - debug: msg='{{ ansible_host }}'
+
+    - service: name=mysql state=started
+      when: ansible_host=='172.31.33.183'

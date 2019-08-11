@@ -1,0 +1,21 @@
+---
+
+- name: Demo to check condition against a variable
+  hosts: localhost
+  vars:
+    age: 39
+    temp_var:
+  tasks:
+    - name: I am baby
+      command: echo "I am baby"
+      when: age<18
+      register: temp_var
+
+    - name: I am an adult
+      command: echo "I am an adult"
+      when: age>18
+      register: temp_var
+    
+    - name: Print string and age
+      debug: msg='{{ temp_var }}'
+       

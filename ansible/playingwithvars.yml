@@ -1,0 +1,12 @@
+---
+
+- hosts: localhost
+
+  tasks:
+    - name: store uptime in register
+      command: uptime
+      register: out_uptime
+      
+    - name: diplay the uptime
+      debug: var=out_uptime
+
