@@ -3,4 +3,4 @@
 region: us-east-1
 instance_type: t2.micro
 ami: ami-0b898040803850657 # Redhat
-keypair: aws-demo # pem file name
+keypair: aws-demo3 # pem file name
